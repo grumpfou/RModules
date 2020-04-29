@@ -37,6 +37,8 @@ class VideoCreator:
         self.idx_display += 1
 
     def createVid(self,figsize=None):
+        if len( self.imagesList)==0:
+            raise FileNotFoundError('No images has yet been created')
         output=self.anim_name
         if figsize is None:
             f = plt.gcf()
@@ -58,4 +60,5 @@ class VideoCreator:
         print('animation created')
         for f in self.imagesList:
             os.remove(f)
+        self.imagesList = []
         # os.remove(self.anim_tmp_dirname)

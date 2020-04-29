@@ -15,7 +15,7 @@ def general_title(text,fontsize=25,**kargs):
     if fontsize!=None:
         kargs['fontsize']=fontsize
 
-    plt.text(0.5, 0.95, text, transform=plt.gcf().transFigure,
+    return plt.text(0.5, 0.95, text, transform=plt.gcf().transFigure,
                                         horizontalalignment='center',**kargs)
 
 
